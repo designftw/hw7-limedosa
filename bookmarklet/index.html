@@ -1,11 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>Exercise 5</title>
 	<link rel="stylesheet" href="writeup.css">
+	<link href="prism.css" rel="stylesheet" />
 </head>
+
 <body>
 	<!-- your html here -->
+
+	<header>
+		<h1>
+			<a href="/"><strong>6.S063</strong>
+				<span>Bookmarklet Maker</span></a>
+		</h1>
+	</header>
+
+	<main>
+
+		<h2><em>Bookmarklet Exercise: </em></h2>
+
+
+
+		</aside>
+		<h3 id="directions">Code for this extension: </h3>
+		<pre><code class="language-css">
+			function revealPassword() {
+			  var myPassword = document.querySelectorAll("input[type=password]");
+			  for (var element = 0; element < myPassword.length; element++) {
+				myPassword[element].type = "text";
+				myPassword[element].setAttribute('previously', "password");
+			  }
+			}
+			function hidePassword() {
+			  var myPassword = document.querySelectorAll("input[previously='password']");
+			  for (var element = 0; element < myPassword.length; element++) {
+				myPassword[element].type = "password";
+				
+			  }
+			}
+			
+			
+			if(window.hideStatePassword){
+			  hidePassword();
+			  window.hideStatePassword=0
+			
+			}
+			else{
+			  revealPassword();
+			  window.hideStatePassword=1
+			}</code></pre>
+
+		</section>
+
+		<p></p>
+		<p></p>
+
+
+
+		<section id="Inspiration">
+			<h3 id="Inspiration" tabindex="-1"><a class="header-anchor" href="#Inspiration">Add Bookmarklet
+					Extension!</a></h3>
+			<script src="bookmarklet.js"></script>
+			<script src="prism.js"></script>
+			Add this <a
+				href="javascript:(function()%7Bfunction%20revealPassword()%20%7B%0A%20%20var%20myPassword%20%3D%20document.querySelectorAll(%22input%5Btype%3Dpassword%5D%22)%3B%0A%20%20for%20(var%20element%20%3D%200%3B%20element%20%3C%20myPassword.length%3B%20element%2B%2B)%20%7B%0A%20%20%20%20myPassword%5Belement%5D.type%20%3D%20%22text%22%3B%0A%20%20%20%20myPassword%5Belement%5D.setAttribute('previously'%2C%20%22password%22)%3B%0A%20%20%7D%0A%7D%0Afunction%20hidePassword()%20%7B%0A%20%20var%20myPassword%20%3D%20document.querySelectorAll(%22input%5Bpreviously%3D'password'%5D%22)%3B%0A%20%20for%20(var%20element%20%3D%200%3B%20element%20%3C%20myPassword.length%3B%20element%2B%2B)%20%7B%0A%20%20%20%20myPassword%5Belement%5D.type%20%3D%20%22password%22%3B%0A%20%20%20%20%0A%20%20%7D%0A%7D%0A%0A%0Aif(window.hideStatePassword)%7B%0A%20%20hidePassword()%3B%0A%20%20window.hideStatePassword%3D0%0A%0A%7D%0Aelse%7B%0A%20%20revealPassword()%3B%0A%20%20window.hideStatePassword%3D1%0A%7D%7D)()%3B">bookmarklet</a>
+			by dragging it to your bookmarks tool bar!
+
+
+
+		</section>
+
+		<section id="Idea1">
+			<h3 id="Idea1" tabindex="-1"><a class="header-anchor" href="#Idea1">Credits:
+				</a></h3>
+			<p> I used <a href="https://caiorss.github.io/bookmarklet-maker">this</a> Bookmarklet Maker.
+			</p>
+		</section>
+		<script src="prism.js"></script>
+	</main>
+
+
+
+
+
+
+
 </body>
+
 </html>
